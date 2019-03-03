@@ -3,7 +3,8 @@
 
 ## 문제 해결 방법 구상
 
-1. 우선 **[정다각형](https://ko.wikipedia.org/wiki/정다각형)** 이라는 단어에서 힌트를 얻었다. 정다각형은 원에 내접한다는 사실!
+1. 우선 **[정다각형](https://ko.wikipedia.org/wiki/정다각형)** 이라는 단어에서 힌트를 얻었다.
+정다각형은 원에 내접한다는 사실!
 그러므로 주어진 3개의 좌표점으로 원의 중심(외심)을 구하면 정다각형의 크기를 짐작할 수 있다.
 
 2. 이제 원의 크기를 구했으니 다음으로는 몇 다각형인지를 구해야한다.
@@ -14,11 +15,4 @@
 
 ## 수학적 접근
 
-삼각형, 원과 관련 공식을 적용해보면서 
-
-[삼각형의 면적](https://doza.pro/art/math/geometry/ko/area-triangle)
-
-온라인 Geometric 툴을 이용해 다각형을 실제로 그려보고 적용되 공식이 맞는지 확인할 수 있었다.
-
-[다각형 그려보기](https://www.math10.com/en/geometry/geogebra/geogebra.html)
-
+[삼각형 원과 관련 공식](https://doza.pro/art/math/geometry/ko/area-triangle) 을 적용해보면서 [온라인 Geometric 툴](https://www.math10.com/en/geometry/geogebra/geogebra.html)을 이용해 다각형을 실제로 그려보고 공식이 맞는지 확인할 수 있었다.
