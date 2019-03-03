@@ -1,4 +1,4 @@
-[Ancient Berland Circus](http://codeforces.com/problemset/problem/1/C)
+# [Ancient Berland Circus](http://codeforces.com/problemset/problem/1/C)
 
 
 # 문제 해결 방법 구상
