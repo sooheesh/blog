@@ -16,3 +16,15 @@
 ## 수학적 접근
 
 [삼각형 원과 관련 공식](https://doza.pro/art/math/geometry/ko/area-triangle) 을 적용해보면서 [온라인 Geometric 툴](https://www.math10.com/en/geometry/geogebra/geogebra.html)을 이용해 다각형을 실제로 그려보고 공식이 맞는지 확인할 수 있었다.
+
+
+- 삼각형 내접원의 반지름 공식
+![daum_equation_1551663036004](https://user-images.githubusercontent.com/24663059/53705583-ee79ee80-3e68-11e9-8f41-52fa9983b016.png)
+
+- 헤론 공식에 의한 삼각형 넓이
+![daum_equation_1551663352716](https://user-images.githubusercontent.com/24663059/53705644-54667600-3e69-11e9-966e-8af242d7af8f.png)
+
+- 삼각형 외접원의 반지름을 통해 삼각형 넓이 구하느 공식
+![daum_equation_1551663506201](https://user-images.githubusercontent.com/24663059/53705701-b32bef80-3e69-11e9-83d4-274ad109abc5.png)
+
+
