@@ -8,14 +8,13 @@
 * 우선 **[정다각형](https://ko.wikipedia.org/wiki/정다각형)** 이라는 단어에서 힌트를 얻었다. 정다각형은 원에 내접한다는 사실! 
 그러므로 주어진 3개의 좌표점으로 원의 중심(외심)을 구하면 정다각형의 크기를 짐작할 수 있다.
 
-
 * 이제 원의 크기를 구했으니 다음으로는 몇 다각형인지를 구해야한다. 최대한 작은 넓이의 다각형을 구해야한댔으니 구해야 할 **다각형의 한 변의 길이는 최대한 커야한다.** 제공된 세 꼭지점으로 어떻게 구할 수 있을까? 
 원의 중심점과 각 세 꼭지점을 연결해보니 원이 피자조각처럼 3개로 나뉜다. 이 3개의 피자조각의 비율의 최대공약수를 구하면 최대공약수 비율만큼으로 자른 피자조각으로 원을 채우면 세 꼭지점과 모두 내접한다!
 
 
 ## 2. 수학적 접근
 
-[삼각형 넓이 관련 공식](https://doza.pro/art/math/geometry/ko/area-triangle) 을 적용해보면서 [온라인 Geometric 툴](https://www.math10.com/en/geometry/geogebra/geogebra.html)을 이용해 다각형을 실제로 그려보고 공식이 맞는지 확인할 수 있었다.
+[삼각형 넓이 관련 공식](https://doza.pro/art/math/geometry/ko/area-triangle) 을 적용해보면서 [온라인 Geometric 툴](https://www.math10.com/en/geometry/geogebra/geogebra.html)을 이용해 다각형을 실제로 그려보고 공식이 맞는지 확인할 수 있었다.  
 
 * 삼각형 외접원의 반지름을 통해 삼각형 넓이 구하는 공식  
 ![daum_equation_1551663506201](https://user-images.githubusercontent.com/24663059/53705701-b32bef80-3e69-11e9-83d4-274ad109abc5.png)

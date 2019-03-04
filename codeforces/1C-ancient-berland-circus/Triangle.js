@@ -6,7 +6,6 @@ export class Triangle {
 		return (a + b + c) / 2;
 	}
 
-
 	static getAreaWithHeronFormula = (p, a, b, c) => {
 		return Math.sqrt(p * (p - a) * (p - b) * (p - c));
 	}

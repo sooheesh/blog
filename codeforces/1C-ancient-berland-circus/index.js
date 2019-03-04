@@ -1,6 +1,6 @@
 import { Coordinates } from 'Coordinates';
 import { Triangle } from 'Triangle';
-import { GCD } from 'GCD';
+import { GCD } from 'common/GCD';
 
 var a = readline();
 var b = readline();
