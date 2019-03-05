@@ -20,7 +20,7 @@
 // 4
 // 5
 
-import { Sorting } from 'common/Sorting';
+import { Sorting } from 'baekjoon/9-sorting';
 
 let N = readline();
 let numList = [];
