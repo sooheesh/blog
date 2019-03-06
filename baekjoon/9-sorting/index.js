@@ -37,7 +37,19 @@ export class Sorting {
 		return list;
 	}
 
-	static insertion = n => {
+	static insertion = list => {
+
+		let item, position;
+		for (let i = 1; i < list.length; i++) {
+			item = list[i];
+			position = i;
+			while(position && item < list[position-1]) {
+				list[position] = list[--position];
+			}
+			list[position] = item;
+		}
+
+		return list;
 
 	}
 
