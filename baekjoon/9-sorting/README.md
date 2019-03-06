@@ -1,14 +1,29 @@
 # [정렬 알고리즘](https://www.acmicpc.net/step/9)
 
-```
-3, 7, 4, 5, 1
-```
- 을 오름차순으로 정렬할 때
-
 ## 1. 버블 정렬
 다음과 같이 차례대로 다음 수와 비교하여 자리를 바꾼다. 마지막 아이템에 도달했을 때 그 수는 고정이 된다. 고정된 아이템을 제외하고 다시 반복한다.
 
 ![](https://cdn-images-1.medium.com/max/800/1*ZQmdM7My9QIhvxj98hrweg.gif)
+
+```
+	static bubble = list => {
+
+		let unFixed = list.length - 1;
+		let tmp;
+
+		for (let i = unFixed; i > 0; i--) {
+			for (let k = 0; k < i; k++) {
+				if (list[k] > list[k+1]) {
+					tmp = list[k];
+					list[k] = list[k+1];
+					list[k+1] = tmp;
+				}
+			}
+		}
+
+		return list;
+	}
+```
 
 <details>
 <summary>상세</summary>
@@ -72,6 +87,26 @@
 
 ![](https://cdn-images-1.medium.com/max/800/1*to7gYwi5_bkZhx-1kSB0Lg.gif)
 
+```
+	static selection = list => {
+
+		let tmp, minIdx;
+		for (let k = 0; k < list.length - 1; k++) {
+			minIdx = k;
+			for (let i = k + 1; i < list.length; i++) {
+				if (list[minIdx] > list[i]) {
+					minIdx = i;
+				}
+			}
+			tmp = list[k];
+			list[k] = list[minIdx];
+			list[minIdx] = tmp;
+		}
+
+		return list;
+	}
+```
+
 <details>
 <summary>상세</summary>
 <p>
@@ -113,6 +148,24 @@
 기준아이템보다 작은 아이템이 나올 때까지 한 칸씩 오른쪽으로 이동시켜준다. 기준아이템을 현재 위치에 넣어준다.
 
 ![](https://cdn-images-1.medium.com/max/800/1*IK3Q4NBRLthllMINV3OxpQ.gif)
+
+```
+	static insertion = list => {
+
+		let item, position;
+		for (let i = 1; i < list.length; i++) {
+			item = list[i];
+			position = i;
+			while(position && item < list[position-1]) {
+				list[position] = list[--position];
+			}
+			list[position] = item;
+		}
+
+		return list;
+
+	}
+```
 
 <details>
 <summary>상세</summary>
