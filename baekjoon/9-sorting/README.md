@@ -10,6 +10,14 @@
 
 ![](https://cdn-images-1.medium.com/max/800/1*ZQmdM7My9QIhvxj98hrweg.gif)
 
+<details>
+<summary>상세</summary>
+<p>
+
+```
+3 7 4 5 1
+```
+
 #### 1번째 loop
 * `3` `7` 4 5 1 (3과 7 비교)  
 ▷ `3 7 4 5 1`  
@@ -53,15 +61,25 @@
 * 결과  
 `1 3 4 5 7`
 
+</p>
+</details>
+
+
+
 ## 2. 선택 정렬
 모든 수를 검사해서 최소값을 찾는다. 최소값을 찾으면 아이템을 첫번째 자리에 있는 아이템과 바꿔준다.
 첫 번째 아이템은 고정된다. 고정된 아이템을 제외하고 반복한다.
 
 ![](https://cdn-images-1.medium.com/max/800/1*to7gYwi5_bkZhx-1kSB0Lg.gif)
 
+<details>
+<summary>상세</summary>
+<p>
+
 ```
 3 7 4 5 1
 ```
+
 #### 1번째 loop
 * 3 7 4 5 `1` (최소값: 1)  
 `1 7 4 5 3`  
@@ -87,6 +105,8 @@
 * 결과  
 `1 3 4 5 7`
 
+</p>
+</details>
 
 ## 3. 삽입 정렬
 목록 중 비교 기준으로 삼을 아이템을 저장해둔다. 기준아이템보다 하위에 있는 아이템들을 하나씩 기준아이템과 비교한다.
@@ -94,9 +114,14 @@
 
 ![](https://cdn-images-1.medium.com/max/800/1*IK3Q4NBRLthllMINV3OxpQ.gif)
 
+<details>
+<summary>상세</summary>
+<p>
+
 ```
 3 7 4 5 1
 ```
+
 #### 1번째 loop
 기준 아이템: 3 `7` 4 5 1 
 
@@ -152,6 +177,9 @@
 
 * 결과  
 `1 3 4 5 7`
+
+</p>
+</details>
 
 ### 출처  
 https://medium.com/@fiv3star/정렬알고리즘-sorting-algorithm-정리-8ca307269dc7
