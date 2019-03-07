@@ -1,6 +1,6 @@
-import { Coordinates } from 'Coordinates';
-import { Triangle } from 'Triangle';
-import { GCD } from 'common/GCD';
+import { Coordinates } from 'algorithm/codeforces/1C-ancient-berland-circus/Coordinates';
+import { Triangle } from 'algorithm/codeforces/1C-ancient-berland-circus/Triangle';
+import { GCD } from 'algorithm/common/GCD';
 
 var a = readline();
 var b = readline();
