@@ -32,6 +32,7 @@ for (let i = 0; i < N; i++) {
 numList = Sorting.bubble(numList);
 // numList = Sorting.selection(numList);
 // numList = Sorting.insertion(numList);
+// numList = Sorting.merge(numList);
 
 for (let i = 0; i < N; i++) {
 	print(`${numList[i]}\n`);

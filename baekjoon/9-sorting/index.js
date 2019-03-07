@@ -53,15 +53,63 @@ export class Sorting {
 
 	}
 
-	static merge = n => {
+	static merge = list => {
+
+		let [left, right, sorted] = [0, list.length-1, []];
+
+		divide(list, left, right);
+
+		function divide (list, left, right) {
+
+			if (left < right) {
+				let mid = Math.floor((left + right) / 2);
+				// console.log('mid',  mid);
+				// console.log('divide(list, left, mid)', left, mid);
+				divide(list, left, mid);
+				// console.log('divide(list, mid+1, right)', mid+1, right);
+				divide(list, mid+1, right);
+				// console.log('mergeCore left, mid, right', left, mid, right);
+				mergeCore(list, left, mid, right);
+			}
+		}
+
+		function mergeCore (list, left, mid, right) {
+
+			let [leftItem, rightItem, sortedIdx] = [left, mid+1, left];
+
+			while(leftItem <= mid && rightItem <= right) {
+				if (list[leftItem] < list[rightItem]) {
+					sorted[sortedIdx++] = list[leftItem++];
+				} else {
+					sorted[sortedIdx++] = list[rightItem++];
+				}
+			}
+
+			while(leftItem <= mid) {
+				sorted[sortedIdx++] = list[leftItem++];
+			}
+
+			while(rightItem <= right) {
+				sorted[sortedIdx++] = list[rightItem++];
+			}
+			// console.log(list, sorted);
+
+			for (let i = left; i <= right; i++) {
+				list[i] = sorted[i];
+			}
+			// console.log(list, sorted);
+
+		}
+
+		return list;
 
 	}
 
-	static quick = n => {
+	static quick = list => {
 
 	}
 
-	static heap = n => {
+	static heap = list => {
 
 	}
 }
