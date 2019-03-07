@@ -43,8 +43,8 @@ export class Sorting {
 		for (let i = 1; i < list.length; i++) {
 			item = list[i];
 			position = i;
-			while(position && item < list[position-1]) {
-				list[position] = list[--position];
+			while(position && item < list[--position]) {
+				list[position+1] = list[position];
 			}
 			list[position] = item;
 		}

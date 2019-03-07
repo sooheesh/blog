@@ -36,9 +36,8 @@ void insertion (int n[], int N) {
     for (int i = 1; i < N; i++) {
         item = n[i];
         position = i;
-            while(position && item < n[position-1]) {
-                n[position] = n[position-1];
-                --position;
+            while(position && item < n[--position]) {
+                n[position+1] = n[position];
             }
         n[position] = item;
     }
@@ -47,7 +46,61 @@ void insertion (int n[], int N) {
 
 void merge (int n[], int N) {
 
+
+
 }
+
+static merge = list => {
+
+		let [left, right, sorted] = [0, list.length-1, []];
+
+		divide(list, left, right);
+
+		function divide (list, left, right) {
+
+			if (left < right) {
+				let mid = Math.floor((left + right) / 2);
+				// console.log('mid',  mid);
+				// console.log('divide(list, left, mid)', left, mid);
+				divide(list, left, mid);
+				// console.log('divide(list, mid+1, right)', mid+1, right);
+				divide(list, mid+1, right);
+				// console.log('mergeCore left, mid, right', left, mid, right);
+				mergeCore(list, left, mid, right);
+			}
+		}
+
+		function mergeCore (list, left, mid, right) {
+
+			let [leftItem, rightItem, sortedIdx] = [left, mid+1, left];
+
+			while(leftItem <= mid && rightItem <= right) {
+				if (list[leftItem] < list[rightItem]) {
+					sorted[sortedIdx++] = list[leftItem++];
+				} else {
+					sorted[sortedIdx++] = list[rightItem++];
+				}
+			}
+
+			while(leftItem <= mid) {
+				sorted[sortedIdx++] = list[leftItem++];
+			}
+
+			while(rightItem <= right) {
+				sorted[sortedIdx++] = list[rightItem++];
+			}
+			// console.log(list, sorted);
+
+			for (let i = left; i <= right; i++) {
+				list[i] = sorted[i];
+			}
+			// console.log(list, sorted);
+
+		}
+
+		return list;
+
+	}
 
 int main() {
 
