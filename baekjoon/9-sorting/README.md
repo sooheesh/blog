@@ -234,5 +234,73 @@ static insertion = list => {
 </p>
 </details>
 
+## 4. 병합 정렬
+리스트를 반으로 쪼개는 것을 반복하여 아이템을 분리시킨다. 분리 후 병합한다.
+쪼개기 전과 쪼갠 후 분리하는 과정은 재귀호출을 통해서 반복할 수 있다.  
+
+![](https://gmlwjd9405.github.io/images/algorithm-merge-sort/merge-sort-concepts.png)  
+
+```
+static merge = list => {
+
+    let [left, right, sorted] = [0, list.length-1, []];
+
+    divide(list, left, right);
+
+    function divide (list, left, right) {
+
+        if (left < right) {
+            let mid = Math.floor((left + right) / 2);
+            // console.log('mid',  mid);
+            // console.log('divide(list, left, mid)', left, mid);
+            divide(list, left, mid);
+            // console.log('divide(list, mid+1, right)', mid+1, right);
+            divide(list, mid+1, right);
+            // console.log('mergeCore left, mid, right', left, mid, right);
+            mergeCore(list, left, mid, right);
+        }
+    }
+
+    function mergeCore (list, left, mid, right) {
+
+        let [leftItem, rightItem, sortedIdx] = [left, mid+1, left];
+
+        while(leftItem <= mid && rightItem <= right) {
+            if (list[leftItem] < list[rightItem]) {
+                sorted[sortedIdx++] = list[leftItem++];
+            } else {
+                sorted[sortedIdx++] = list[rightItem++];
+            }
+        }
+
+        while(leftItem <= mid) {
+            sorted[sortedIdx++] = list[leftItem++];
+        }
+
+        while(rightItem <= right) {
+            sorted[sortedIdx++] = list[rightItem++];
+        }
+        // console.log(list, sorted);
+
+        for (let i = left; i <= right; i++) {
+            list[i] = sorted[i];
+        }
+        // console.log(list, sorted);
+
+    }
+
+    return list;
+}
+```
+
+<details>
+<summary>상세</summary>
+<p>
+
+![](https://gmlwjd9405.github.io/images/algorithm-merge-sort/merge-sort-ccode.png)
+
+</p>
+</details>
+
 ### 출처  
 https://medium.com/@fiv3star/정렬알고리즘-sorting-algorithm-정리-8ca307269dc7

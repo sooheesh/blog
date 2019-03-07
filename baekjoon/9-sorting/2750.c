@@ -20,7 +20,7 @@ void selection (int n[], int N) {
         minIdx = k;
         for (int i = k + 1; i < N; i++) {
             if (n[minIdx] > n[i]) {
-            minIdx = i;
+                minIdx = i;
             }
         }
         tmp = n[k];
@@ -36,85 +36,71 @@ void insertion (int n[], int N) {
     for (int i = 1; i < N; i++) {
         item = n[i];
         position = i;
-            while(position && item < n[--position]) {
-                n[position+1] = n[position];
-            }
+        while(position && item < n[position-1]) {
+            n[position] = n[position-1];
+            --position;
+        }
         n[position] = item;
     }
 
 }
 
-void merge (int n[], int N) {
+void mergeCore (int n[], int left, int mid, int right, int sorted[]) {
 
+    int leftItem = left, rightItem = mid + 1, sortedIdx = left;
 
+    while(leftItem <= mid && rightItem <= right) {
+        if (n[leftItem] < n[rightItem]) {
+            sorted[sortedIdx++] = n[leftItem++];
+        } else {
+            sorted[sortedIdx++] = n[rightItem++];
+        }
+    }
+
+    while(leftItem <= mid) {
+        sorted[sortedIdx++] = n[leftItem++];
+    }
+
+    while(rightItem <= right) {
+        sorted[sortedIdx++] = n[rightItem++];
+    }
+
+    for (int i = left; i <= right; i++) {
+        n[i] = sorted[i];
+    }
 
 }
 
-static merge = list => {
+void divide (int n[], int left, int right, int sorted[]) {
 
-		let [left, right, sorted] = [0, list.length-1, []];
+    if (left < right) {
+        int mid = (left + right) / 2;
+        divide(n, left, mid, sorted);
+        divide(n, mid+1, right, sorted);
+        mergeCore(n, left, mid, right, sorted);
+    }
+}
 
-		divide(list, left, right);
+void merge (int n[], int N, int sorted[]) {
+    int left = 0, right = N;
 
-		function divide (list, left, right) {
-
-			if (left < right) {
-				let mid = Math.floor((left + right) / 2);
-				// console.log('mid',  mid);
-				// console.log('divide(list, left, mid)', left, mid);
-				divide(list, left, mid);
-				// console.log('divide(list, mid+1, right)', mid+1, right);
-				divide(list, mid+1, right);
-				// console.log('mergeCore left, mid, right', left, mid, right);
-				mergeCore(list, left, mid, right);
-			}
-		}
-
-		function mergeCore (list, left, mid, right) {
-
-			let [leftItem, rightItem, sortedIdx] = [left, mid+1, left];
-
-			while(leftItem <= mid && rightItem <= right) {
-				if (list[leftItem] < list[rightItem]) {
-					sorted[sortedIdx++] = list[leftItem++];
-				} else {
-					sorted[sortedIdx++] = list[rightItem++];
-				}
-			}
-
-			while(leftItem <= mid) {
-				sorted[sortedIdx++] = list[leftItem++];
-			}
-
-			while(rightItem <= right) {
-				sorted[sortedIdx++] = list[rightItem++];
-			}
-			// console.log(list, sorted);
-
-			for (let i = left; i <= right; i++) {
-				list[i] = sorted[i];
-			}
-			// console.log(list, sorted);
-
-		}
-
-		return list;
-
-	}
+    divide(n, left, right, sorted);
+}
 
 int main() {
 
     int N;
     scanf("%d", &N);
 
-    int n[N];
+    int n[N], sorted[N];
     for (int i = 0; i < N; i++) {
         scanf("%d", &n[i]);
     }
 
 //    bubble(n, N);
 //    selection(n, N);
-    insertion(n, N);
+//    insertion(n, N);
+    merge(n, N, sorted);
 
 
     for (int i = 0; i < N; i++) {
