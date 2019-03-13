@@ -1,0 +1,24 @@
+# 리액트 JSX
+
+- stands for Javascript XML
+- HTML처럼 생김  
+- can put javascript syntax into curly braces
+
+```
+<div name={1+1}>Hello</div>
+```
+
+```
+React.createElement(
+    "div",
+    {name: 1+1},
+    "Hello"
+);
+```
+
+- html의 `class`는 `className`으로 써줘야함.
+- html 형식으로 써줘도 되지만 React.createElement 형식으로 써줘도 됨.
+- jsx를 리턴해주는 함수(Presentational Component)를 써서 include 해 줄 수 있음(Container Component). 
+
+
+
