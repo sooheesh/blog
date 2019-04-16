@@ -1,0 +1,4 @@
+// Ascending
+export class Stack {
+
+}
