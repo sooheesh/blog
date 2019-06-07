@@ -1,0 +1,3 @@
+react-native-firebase pods로 연동기
+
+그냥 ios 폴더를 삭제한 후 해보니 잘 됨.
