@@ -7,7 +7,9 @@
 
 * 이건 문제를 잘 읽으면 쉬운 문제. 
 ```
-So, if two or more players have the maximum number of points (say, it equals to m) at the end of the game, than wins the one of them who scored at least m points first. 
+So, if two or more players have the maximum number of points (say, it equals to m) 
+at the end of the game, than wins the one of them who scored at least m points first. 
+
 ```
 여기서 `wins the one of THEM`과 `AT LEAST m points first`가 핵심인 것 같다.
 
