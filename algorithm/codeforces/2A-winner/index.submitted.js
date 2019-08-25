@@ -12,22 +12,24 @@ for(var i = 0; i < num; i++) {
     log.push([player, scores[player]]);
 }
 
-var max = -1;
-var winners = [];
-for (player in scores) {
-    if (scores[player] > max) {
-        max = scores[player];
-        winners = [player];
-    } else if (scores[player] === max) {
-        winners.push(player);
-    }
-}
+var playerList = Object.keys(scores).slice(0);
+
+var winnerScore = playerList.sort((a, b) => {
+    // print(`a: ${a}, score: ${scores[a]}`);
+    // print(`b: ${b}, score: ${scores[b]}`);
+    return scores[b] - scores[a];
+})[0];
+winnerScore = scores[winnerScore];
+
+// print(winnerScore)
+
+var winnerList = playerList.filter(player => {
+    return scores[player] === winnerScore;
+})
 
 log.some(e => {
-    player = e[0];
-    score = e[1];
-    if (winners.indexOf(player) > -1 && score >= max) {
-        print(player);
+    if (winnerList.includes(e[0]) && e[1] >= winnerScore) {
+        print(e[0]);
         return true;
     }
 })
