@@ -34,4 +34,4 @@ at the end of the game, than wins the one of them who scored at least m points f
 > [1, 0, -1, -2]
 ```
 
-이유는 sort 함수에서 -1, 0, 1 의 식으로 반환해야하는데 관계연산자는 true(1) 아니면 false(0)를 반환하기 때문이다.
+이유는 sort 함수에서 -1, 0, 1 중 하나를 반환해야하는데 관계연산자는 1 아니면 0를 반환하기 때문이다.
