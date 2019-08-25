@@ -2,7 +2,8 @@
 📚알고리즘 문제 풀이
 
 ## codeforces
-- [ancient berland circus](algorithm/codeforces/1C-ancient-berland-circus)
+- [Ancient berland circus](algorithm/codeforces/1C-ancient-berland-circus)
+- [Winner](algorithm/codeforces/2A-winner)
 
 ## baekjoon
 - [정렬해보기](algorithm/baekjoon/9-sorting)
