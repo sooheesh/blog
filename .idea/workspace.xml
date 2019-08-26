@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c740159-00ab-4928-8f70-ccfe978ab67c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/algorithm/common/Hashing/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/algorithm/codeforces/2A-winner/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/codeforces/2A-winner/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -101,7 +99,7 @@
       <updated>1566649038636</updated>
       <workItem from="1566649039904" duration="3815000" />
       <workItem from="1566655015331" duration="8744000" />
-      <workItem from="1566784629537" duration="3425000" />
+      <workItem from="1566784629537" duration="3579000" />
     </task>
     <servers />
   </component>

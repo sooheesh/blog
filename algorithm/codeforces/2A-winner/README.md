@@ -34,4 +34,4 @@ at the end of the game, than wins the one of them who scored at least m points f
 이유는 sort 함수에서 -1, 0, 1 중 하나를 반환해야하는데 관계연산자는 1 아니면 0를 반환하기 때문이다.
 
 ## 2. 해싱 문제
-[Hashing](algorithm/common/Hash)를 참고하면 좋다. 나는 Associative array란 점에서 해싱과 비슷한 자바스크립트의 Dictionary를 사용하여 구현하였다. 
+[Hashing](algorithm/common/Hashing)를 참고하면 좋다. 나는 Associative array란 점에서 해싱과 비슷한 자바스크립트의 Dictionary를 사용하여 구현하였다. 
