@@ -8,6 +8,11 @@
 ## baekjoon
 - [정렬해보기](algorithm/baekjoon/9-sorting)
 
+## 알고리즘
+- [GCD(Greatest Common Diviser: 최대공약수)](algorithm/common/GCD)
+- [Hashing](algorithm/common/Hashing)
+
+
 # 기타
 - [전역 변수는 왜 피해야하는가?](etc/why-should-we-avoid-using-global-variables-in-c.md)
 
