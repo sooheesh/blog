@@ -4,6 +4,7 @@
 ## codeforces
 - [1C Ancient berland circus](algorithm/codeforces/1C-ancient-berland-circus)
 - [2A Winner](algorithm/codeforces/2A-winner)
+- [2B The least round way](algorithm/codeforces/2B-the-least-round-way)
 
 ## baekjoon
 - [정렬해보기](algorithm/baekjoon/9-sorting)

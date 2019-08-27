@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c740159-00ab-4928-8f70-ccfe978ab67c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/algorithm/codeforces/2B-the-least-round-way/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algorithm/codeforces/2B-the-least-round-way/index.submitted.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithm/codeforces/2A-winner/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/codeforces/2A-winner/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,44 +25,8 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>winnerInfo</find>
-      <find>roundInfo[0]</find>
-      <find>let</find>
-      <find>winners</find>
-      <find>player</find>
-      <find>roundInfo</find>
-      <find>playerScore</find>
-      <find>scoreLog</find>
-      <find>r</find>
-      <find>r</find>
-      <find>p</find>
-      <find>Object.keys(scores)</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>roundInfo</replace>
-      <replace>var</replace>
-      <replace>winnerList</replace>
-      <replace>p</replace>
-      <replace>n</replace>
-      <replace>r</replace>
-      <replace>r[0]</replace>
-      <replace>score</replace>
-      <replace>log</replace>
-      <replace>round</replace>
-      <replace>player</replace>
-      <replace>playerList</replace>
-      <replace>max</replace>
-      <replace>winners</replace>
-    </replaceStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1680" />
-    <option name="height" value="1050" />
   </component>
   <component name="ProjectId" id="1PwUPPFeSus99gDdYJudF8ZrzuI" />
   <component name="PropertiesComponent">
@@ -101,7 +66,8 @@
       <updated>1566649038636</updated>
       <workItem from="1566649039904" duration="3815000" />
       <workItem from="1566655015331" duration="8744000" />
-      <workItem from="1566784629537" duration="4017000" />
+      <workItem from="1566784629537" duration="4705000" />
+      <workItem from="1566874275841" duration="10765000" />
     </task>
     <servers />
   </component>
@@ -113,7 +79,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
