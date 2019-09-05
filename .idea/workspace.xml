@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c740159-00ab-4928-8f70-ccfe978ab67c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/algorithm/codeforces/2B-the-least-round-way/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/algorithm/codeforces/2B-the-least-round-way/index.submitted.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algorithm/codeforces/2B-the-least-round-way/index.submitted2.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/codeforces/2B-the-least-round-way/index.submitted.js" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/codeforces/2B-the-least-round-way/index.submitted.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +66,9 @@
       <workItem from="1566649039904" duration="3815000" />
       <workItem from="1566655015331" duration="8744000" />
       <workItem from="1566784629537" duration="4705000" />
-      <workItem from="1566874275841" duration="10765000" />
+      <workItem from="1566874275841" duration="42095000" />
+      <workItem from="1567136915146" duration="113000" />
+      <workItem from="1567663147494" duration="2795000" />
     </task>
     <servers />
   </component>

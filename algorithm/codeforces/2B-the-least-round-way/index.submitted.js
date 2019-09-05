@@ -1,103 +1,80 @@
-var size = Number(readline());
-
-// 1. 입력값을 배열로 정렬
-// 2. 한 번씩 순회하면서 0의 개수를 구한다. (2의 배수와 5의 배수의 개수)
-// 3. trailing zeros가 가장 적은 경로를 구한다.
+var size = parseInt(readline());
 
 var matrix = [];
-var line = [];
-var num;
-var countTwo = 0;
-var countFive = 0;
-var countTen = 0;
-// put the inputs into 'matrix' two dimensional array
-for (var i = 0; i < size; i++) {
-  line = readline().split(" ");
+var column;
+var row;
+var zeroPosition = null;
+for (column = 0; column < size; column++) {
+  matrix.push(readline().split(" ").map(n => parseInt(n)));
 
-  // transform the input number into number of twos and fives
-  for (var k = 0; k < line.length; k++) {
-    num = line[k];
-    countTwo = 0;
-    countFive = 0;
-    countTen = 0;
+  for (row = 0; row < size; row++) if (matrix[column][row] === 0) zeroPosition = [column, row];
+}
 
-    while (num % 10 === 0) {
-      num = num / 10;
-      countTen++;
-    }
-    while (num % 2 === 0) {
-      num = num / 2;
-      countTwo++;
-    }
-    while (num % 5 === 0) {
-      num = num / 5;
-      countFive++;
-    }
-    line[k] = {
-      2: countTwo,
-      5: countFive,
-      10: countTen
+function factorize(prime, num) {
+  if (num === 0) return 0;
+  var count = 0;
+  while (num % prime === 0) {num /= prime; count++}
+  return count;
+}
+
+var accMatrix = [];
+var accPath = [];
+var path = "";
+function accumulate(prime) {
+
+  for (column = 0; column < size; column++) {
+    accMatrix[column] = [];
+    accPath[column] = [];
+
+    for (row = 0; row < size; row++) {
+      accMatrix[column][row] = factorize(prime, matrix[column][row]);
+
+      if (column - 1 >= 0 && row - 1 >= 0) {
+        if (accMatrix[column - 1][row] < accMatrix[column][row - 1]) {
+          accMatrix[column][row] += accMatrix[column - 1][row];
+          accPath[column][row] = "D";
+        } else {
+          accMatrix[column][row] += accMatrix[column][row - 1];
+          accPath[column][row] = "R";
+        }
+      } else if (column - 1 >= 0) {
+        accMatrix[column][row] += accMatrix[column - 1][row];
+        accPath[column][row] = "D";
+      } else if (row - 1 >= 0) {
+        accMatrix[column][row] += accMatrix[column][row - 1];
+        accPath[column][row] = "R";
+      } else {
+        accPath[column][row] = "";
+      }
     }
   }
-  matrix.push(line);
-}
-// print(JSON.stringify(matrix));
 
-var result = [];
-goNext([0, 0], "", {2: matrix[0][0][2], 5: matrix[0][0][5], 10: matrix[0][0][10]});
-getTheLeastRoundWay();
-
-// 경로를 만드는 재귀함수를 만든다.
-function goNext(currentIndex, way, numberOfTwoNFive) {
-
-  if (endOfTheRoute(currentIndex)) {
-    result.push({way: way, trailingZeros: calculateTrailingZeros(numberOfTwoNFive)})
-    return;
+  path = "";
+  for (column = size - 1; column >= 0;) for (row = size - 1; row >= 0;) {
+    if (column === 0 && row === 0) {column--; row--;}
+    else {
+      path = accPath[column][row] + path;
+      if (accPath[column][row] === "D") column--;
+      else row--;
+    }
   }
-  // 아래쪽 오른쪽으로 이동
-  if (canGoDown(currentIndex)) goNext(
-    [currentIndex[0] + 1, currentIndex[1]],
-    way + "D",
-    {
-      2: numberOfTwoNFive[2] + matrix[currentIndex[0] + 1][currentIndex[1]][2],
-      5: numberOfTwoNFive[5] + matrix[currentIndex[0] + 1][currentIndex[1]][5],
-      10: numberOfTwoNFive[10] + matrix[currentIndex[0] + 1][currentIndex[1]][10],
-    });
-  if (canGoRight(currentIndex)) goNext([currentIndex[0], currentIndex[1] + 1], way + "R", {
-    2: numberOfTwoNFive[2] + matrix[currentIndex[0]][currentIndex[1] + 1][2],
-    5: numberOfTwoNFive[5] + matrix[currentIndex[0]][currentIndex[1] + 1][5],
-    10: numberOfTwoNFive[10] + matrix[currentIndex[0]][currentIndex[1] + 1][10],
-  });
+
+  return [accMatrix[size - 1][size - 1], path]
 }
 
-function endOfTheRoute(currentIndex) {
-  return currentIndex[0] === size - 1 && currentIndex[1] === size - 1;
+var twos = accumulate(2);
+var fives = accumulate(5);
+var best = twos[0] <= fives[0] ? twos : fives;
+var i = 0;
+function getPathWith(coordinates) {
+  path = "";
+  for (i = 0; i < coordinates[0]; i++) path += "D";
+  for (i = 0; i < size - 1; i++) path += "R";
+  for (i = coordinates[0]; i < size - 1; i++) path += "D";
+  return path;
 }
 
-function canGoDown(currentIndex) {
-  return currentIndex[0] !== size - 1;
-}
+if (zeroPosition !== null && best[0] > 1) best = [1, getPathWith(zeroPosition)]
 
-function canGoRight(currentIndex) {
-  return currentIndex[1] !== size - 1;
-}
-
-function calculateTrailingZeros(numberOfTwoNFive) {
-  // print(JSON.stringify(numberOfTwoNFive));
-  var twos = numberOfTwoNFive[2];
-  var fives = numberOfTwoNFive[5];
-  var tens = numberOfTwoNFive[10];
-
-  if ((twos === 0 || fives === 0) && tens === 0) return 0;
-  if (twos > fives) return fives + tens;
-  else return twos + tens;
-}
-
-function getTheLeastRoundWay() {
-  result.sort((a, b) => a.trailingZeros - b.trailingZeros);
-  // print(JSON.stringify(result));
-  print(result[0].trailingZeros);
-  print(result[0].way);
-}
-
-// Memory limit exceeded on test 11을 해결해야한다.
+print(best[0]);
+print(best[1]);
