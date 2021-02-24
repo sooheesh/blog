@@ -22,4 +22,5 @@
 - [리액트 가상돔](etc/react-virtual-dom.md)
 
 # Data Engineering
-- [Firebase analytics & Bigquery & GC(Google Cloud) Logging & GC Pub/Sub](etc/bigquery.md)
+- [Firebase analytics & Bigquery & GC(Google Cloud) Logging & GC Pub/Sub](google-cloud/bigquery.md)
+- [How to set a serverless Telegram bot webhook using Google Cloud Functions, Google Cloud Build, Google Source Repositories](google-cloud/telegram-bot.md)
